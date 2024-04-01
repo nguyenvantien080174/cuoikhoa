@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="total-container">
+        <img class="img1" src="./img/Group.png" alt="">
+        <img class="img2" src="./img/Group 101395.png" alt="">
+        <img class="img3" src="./img/Group (1).png" alt="">
+        <div class="container">
+            <img class="main-img" src="./img/Mask group.png" alt="group">
+            <div class="row">
+                <div class="form">
+                    <div class="head">
+                        <div class="x" style="border-bottom: 2px solid rgb(29, 74, 255) ;"> Login</div>
+                        <div class="x"> Register</div>
+
+                    </div>
+                    <div style="font-size: 17px;">Email</div>
+                    <div style="font-size: 17px;"> <input type="text" id="email" placeholder="Enter your email"></div>
+                    <div>Password</div>
+                    <div> <input type="text" id="password" placeholder="Enter your password"></div>
+                    <div id="tickbox"><input style="width: 30px; height: 15px; margin-left: -3px;" type="checkbox"
+                            id="myCheckbox" name="myCheckbox">
+                        <span style="font-size: 17px;">Remember me</span>
+                    </div>
+                    <button id="Login" onclick="Login()"> Login</button>
+                    <div id="err-log-email" style="color: red; display: none;">Email không tồn tại</div>
+                    <div id="err-log-pass" style="color: red; display: none;">Mật khẩu chưa chính xác!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
