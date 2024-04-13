@@ -29,7 +29,7 @@ if (status == 'error'){
   document.getElementById("password").style.border = "1px solid red";
 } else {
   window.location.href =
-      "https://nguyenvantien080174.github.io/Landing-page/endOfIntern/login-sucess.html";
+      "https://nguyenvantien080174.github.io/cuoikhoa/html/aa.html";
 }
    
 };
