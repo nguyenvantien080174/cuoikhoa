@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/responsive2.css">
+</head>
+
+<body>
+    <div class="total-container">
+        <div class="container">
+            <div class="header">
+                <img class="logo"
+                    src="/img/logo-taskio-0e358e6b5592e0b71eba2806bf4d4eb53a101a0047b739a9054d0f63e982513c 1.png"
+                    alt="">
+                <div class="nav">
+                    <div class="slogan">Let's get shit done! <img src="/img/peace 1.png" alt=""></div>
+                    <span class="new-task" id="openModalBtn"> <i class="fa-solid fa-plus"></i> New task </span>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="reponsive-50">
+                    <div class="to-do">
+                        <div class="bar">
+                            <div class="navbar">
+                                <div class="nav1">
+                                    <div style="line-height: 25px;">ToDo</div>
+
+
+                                    <span class="counter" id="count-childs-to-do" style="background-color: #27c9fb;">3</span>
+                                </div>
+                            </div>
+                            <div class="line1" style="background-color: #1797ff;"></div>
+                        </div>
+                        <div class="list-to-do checkBTN " id="list-to-do">
+                           
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="doing" >
+                        <div class="bar">
+                            <div class="navbar" style="background-color: #cfc06c;">
+                                <div class="nav1">
+                                    <div style="line-height: 25px; ">Doing</div>
+
+
+                                    <span class="counter" id="count-childs-Doing" style="background-color: #c9bb24;">3</span>
+                                </div>
+
+                            </div>
+                            <div class="line1" style="background-color: #cfc06c;"></div>
+
+                        </div>
+                        <div class="list-doing checkBTN " id="list-doing">
+                           
+                            
+                        
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="reponsive-50">
+
+
+
+                    <div class="to-do complete">
+                        <div class="main">
+                            <div class="navbar" style="background:#43ba1ffe;">
+                                <div class="nav1">
+                                    <div style="line-height: 25px;">Complete</div>
+
+
+                                    <span class="counter" id="count-childs-Finish" style="background-color: #59ce1ace;"></span>
+                                </div>
+                            </div>
+                            <div class="line1" style="background-color:#43ba1ffe;"></div>
+
+                        </div>
+                        <div class="list-to-do checkBTN" id="list-finish">
+                           
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="doing blocked">
+                        <div class="main">
+                            <div class="navbar" style="background-color: #e31e1ee2;">
+                                <div class="nav1">
+                                    <div style="line-height: 25px;">Blocked</div>
+
+
+                                    <span class="counter" id="count-childs-blocked" style="background-color: #e71e1ebd;">3</span>
+                                </div>
+                            </div>
+                            <div class="line1" style="background-color: #e31e1ee2;"></div>
+
+                        </div>
+
+                        <div class="list-doing checkBTN" id="list-blocked">
+
+                            <div class="box" id="boxx" draggable="true" >
+                                <div class="box1">
+                                    <div class="col-1">
+                                        <div class="col-80">
+
+                                            <div class="category"> Marketing</div>
+                                            <h2 class="title" style="margin: 5px 0px 15px 0px !important;">Write SEO
+                                                article for new product</h2>
+
+                                        </div>
+                                        <div class="choose" onclick="edit()"><img src="/img/Edit.png" alt=""> <img
+                                                onclick="Delete()" src="/img/Delete.png" alt=""></div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="line" style="background-color: antiquewhite; margin-top: 10px;">
+                                        </div>
+                                        <div class="content1">This is an existential moment for effective altruism
+                                            and the rationalist community writ-large.</div>
+
+                                        <div class="hour">
+                                            <img src="/img/Frame.png" alt="">
+                                            <span id="hour" style="padding-bottom: 12px;">June 30, 2022</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+
+                    <h2
+                        style="opacity: 0.65; display: flex; justify-content: center; height: 35px; margin-bottom: 0px;">
+                        Add new todo</h2>
+                    <input type="text" id="category1" placeholder="Category  Etc:Marketing...">
+                    <input type="text" id="title1" placeholder="Title">
+                    <input type="text" id="content1" placeholder="Content" style="height: 75px;">
+                    <button id="submit" onclick="checkCreateBox()"
+                        style="width: 100%; margin-top: 10px;">Submit</button>
+                </div>
+            </div>
+            
+            <div id="Modal" class="modal">
+                <div class="modal-content">
+                    <span id="close" class="close">&times;</span>
+
+                    <h2
+                        style="opacity: 0.65; display: flex; justify-content: center; height: 35px; margin-bottom: 0px;">
+                        Edit todo</h2>
+                    <input type="text" id="category2" placeholder="Category  Etc:Marketing...">
+                    <input type="text" id="title2" placeholder="Title">
+                    <input type="text" id="content2" placeholder="Content" style="height: 75px;">
+                    <div id="tick">
+                            <div class="col-30"><input type="radio" id="ToDo" name="rb" value="" >
+                            ToDo</div>
+                            <div class="col-30"><input type="radio" id="Doing" name="rb" value="" >
+                            Doing</div>
+                            <div class="col-30"><input type="radio" id="Finished" name="rb" value="" >
+                            Finished</div>
+                        </div>
+                    <button id="submit" onclick="EditBox()"
+                    style="width: 100%; margin-top: 10px;">Submit</button>
+                </div>
+            </div>
+            
+
+
+
+
+
+        </div>
+
+        <script  src="/js/create-modal.js"></script>
+        <script type="module" src="/js/delete-box.js"></script>
+        <script  src="/js/Drag-Drop.js"></script>
+        <script  src="/js/create-box.js"></script>
+</body>
+
+</html>
