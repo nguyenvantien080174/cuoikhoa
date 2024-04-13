@@ -110,8 +110,8 @@ const createBox = (category, title, content, id, date) => {
                             <h2 class="title" style="margin: 5px 0px 15px 0px !important;">${title}</h2>
     
                         </div>
-                        <div class="choose" ><img onclick="edit${id}(event)" src="/img/Edit.png" alt=""> <img class="BTNDelete"
-                                onclick="Delete${id}(event)" src="/img/Delete.png" alt="" value ="${id}" ></div>
+                        <div class="choose" ><img onclick="edit${id}(event)" src="../img/Edit.png" alt=""> <img class="BTNDelete"
+                                onclick="Delete${id}(event)" src="../img/Delete.png" alt="" value ="${id}" ></div>
                     </div>
                     <div class="content">
                         <div class="line" style="background-color: antiquewhite; margin-top: 10px;">
