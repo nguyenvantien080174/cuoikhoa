@@ -8,6 +8,7 @@
     .main-img{
         width: 50%;
     }
+   
 }
 
 @media (max-width:1040px) {
@@ -49,6 +50,8 @@
     }
     .form{
         width: 75%;
+        transform: translateY(19%);
+        
     }
     #Login {
         height: 55px;
