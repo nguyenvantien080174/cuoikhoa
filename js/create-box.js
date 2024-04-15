@@ -97,6 +97,7 @@ const checkCreateBox = () => {
     // getValueNewTask();
     date();
     count();
+    const doing = localStorage.getItem
   }
 };
 // tao box
@@ -130,13 +131,25 @@ const createBox = (category, title, content, id, date) => {
 
 //RENDER RA BOX KHI LOAD LAI TRANG HOAC AN SUBMIT
 const renderBox = () => {
+
   const addlist = document.getElementById("list-to-do");
   addlist.innerHTML = "";
-  console.log(addlist2);
-  console.log(addlist3);
-console.log("1")
+  if(localStorage.getItem('key') === null) {
+    let ab = [];
+    localStorage.setItem('key', JSON.stringify(ab)); 
+
+} 
+  if(localStorage.getItem('doing') === null) {
+    let ab = [];
+    localStorage.setItem('doing', JSON.stringify(ab)); 
+} 
+if(localStorage.getItem('finish') === null) {
+  let ab = [];
+  localStorage.setItem('finish', JSON.stringify(ab)); 
+} 
+
   // Lấy dữ liệu từ Local Storage và chuyển đổi thành mảng các đối tượng
-  const saveBoxs = JSON.parse(localStorage.getItem("key")) || [];
+  var saveBoxs = JSON.parse(localStorage.getItem("key")) || [];
   // Duyệt qua từng đối tượng trong mảng và hiển thị thông tin của nó
   saveBoxs.forEach((task) => {
     //tao box
@@ -149,7 +162,7 @@ console.log("1")
   var addlist2 = document.getElementById("list-doing");
   addlist2.innerHTML = "";
   // Lấy dữ liệu từ Local Storage và chuyển đổi thành mảng các đối tượng
-  const saveBoxs2 = JSON.parse(localStorage.getItem("doing")) || [];
+  var saveBoxs2 = JSON.parse(localStorage.getItem("doing")) || [];
   // Duyệt qua từng đối tượng trong mảng và hiển thị thông tin của nó
   saveBoxs2.forEach((task2) => {
     //tao box
@@ -162,7 +175,7 @@ console.log("1")
   var addlist3 = document.getElementById("list-finish");
   addlist3.innerHTML = "";
   // Lấy dữ liệu từ Local Storage và chuyển đổi thành mảng các đối tượng
-  const saveBoxs3 = JSON.parse(localStorage.getItem("finish")) || [];
+  var saveBoxs3 = JSON.parse(localStorage.getItem("finish")) || [];
   // Duyệt qua từng đối tượng trong mảng và hiển thị thông tin của nó
   saveBoxs3.forEach((task3) => {
     //tao box
@@ -172,6 +185,7 @@ console.log("1")
     );
   });
   count();
+
 };
 
 // Gọi hàm để hiển thị dữ liệu đã lưu khi tải lại trang
@@ -188,6 +202,7 @@ var a=0;
     var element = event.target; // Lấy phần tử được click
     var parent = element.parentNode.parentNode.parentNode.parentNode.parentNode; // Lấy phần tử cha của phần tử được click
     if (parent.id == "list-to-do"){
+      before1 = 1;
       const  radioBtn1 = document.getElementById("ToDo");
       radioBtn1.checked = true;
       let savedTasks = JSON.parse(localStorage.getItem("key")) || [];
@@ -202,6 +217,7 @@ var a=0;
       }
     })
     } else if (parent.id == "list-doing"){
+      before1 = 2;
       const  radioBtn2 = document.getElementById("Doing");
       radioBtn2.checked = true;
       let savedTasks1 = JSON.parse(localStorage.getItem("doing")) || [];
@@ -216,6 +232,7 @@ var a=0;
       }
     })
     } else if (parent.id == "list-finish"){
+      before1 = 3;
       const  radioBtn3 = document.getElementById("Finished");
       radioBtn3.checked = true;
       let savedTasks2 = JSON.parse(localStorage.getItem("finish")) || [];
@@ -242,9 +259,7 @@ var a=0;
         modal.style.display = "none";
     }
   };
-  console.log(chooseSection())
-        before1= chooseSection();
-        console.log(before1 + " ==");
+
 };
   }
 };
@@ -254,16 +269,17 @@ createEdit();
 var before1 = -1;
 
 const EditBox = () => {
-  console.log(a);
+
   const id = a;
   const category = document.getElementById("category2").value;
   const title = document.getElementById("title2").value;
   const content = document.getElementById("content2").value;
   const date1 = date();
+  console.log(before1)
    if (category !== "" && title !== "" && content !== "") {
-      let data = JSON.parse(localStorage.getItem("key"));
-      let doing = JSON.parse(localStorage.getItem("doing"));
-      let finish = JSON.parse(localStorage.getItem("finish"));
+      let data = JSON.parse(localStorage.getItem("key")) || [];
+      let doing = JSON.parse(localStorage.getItem("doing")) || [];
+      let finish = JSON.parse(localStorage.getItem("finish")) || [];
       if(before1 == 1){
         data = data.filter((obj) => obj.id !== id);
       } else if( before1 == 2){

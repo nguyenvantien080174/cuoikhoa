@@ -30,6 +30,7 @@ if (status == 'error'){
 } else {
   window.location.href =
       "https://nguyenvantien080174.github.io/cuoikhoa/html/aa.html";
+      
 }
    
 };
