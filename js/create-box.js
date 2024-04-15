@@ -120,7 +120,7 @@ const createBox = (category, title, content, id, date) => {
                         <div class="content1" >${content}</div>
     
                         <div class="hour">
-                            <img src="/img/Frame.png" alt="" >
+                            <img src="../img/Frame.png" alt="" >
                             <span class="hour1" id="hour" style="padding-bottom: 12px;">${date}</span>
                         </div>
                     </div>
@@ -132,6 +132,9 @@ const createBox = (category, title, content, id, date) => {
 const renderBox = () => {
   const addlist = document.getElementById("list-to-do");
   addlist.innerHTML = "";
+  console.log(addlist2);
+  console.log(addlist3);
+console.log("1")
   // Lấy dữ liệu từ Local Storage và chuyển đổi thành mảng các đối tượng
   const saveBoxs = JSON.parse(localStorage.getItem("key")) || [];
   // Duyệt qua từng đối tượng trong mảng và hiển thị thông tin của nó
@@ -143,7 +146,7 @@ const renderBox = () => {
     );
   });
 
-  const addlist2 = document.getElementById("list-doing");
+  var addlist2 = document.getElementById("list-doing");
   addlist2.innerHTML = "";
   // Lấy dữ liệu từ Local Storage và chuyển đổi thành mảng các đối tượng
   const saveBoxs2 = JSON.parse(localStorage.getItem("doing")) || [];
@@ -156,7 +159,7 @@ const renderBox = () => {
     );
   });
 
-  const addlist3 = document.getElementById("list-finish");
+  var addlist3 = document.getElementById("list-finish");
   addlist3.innerHTML = "";
   // Lấy dữ liệu từ Local Storage và chuyển đổi thành mảng các đối tượng
   const saveBoxs3 = JSON.parse(localStorage.getItem("finish")) || [];
